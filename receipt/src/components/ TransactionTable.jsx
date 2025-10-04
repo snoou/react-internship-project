@@ -19,33 +19,35 @@ const Data = [
 const TransactionTable = () => {
     return (
         <>
-            <div className="size">
-                <h2>تراکنش‌ها</h2>
-                <table className="table">
-                    <thead>
-                        <tr className="title">
-                            <th  >تاریخ</th>
-                            <th >درآمد (تومان)</th>
-                            <th >هزینه (تومان)</th>
-                            <th >شرح</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Data.map((tx, index) => (
-                            <tr className="info" key={index}>
-                                <td className="date">{tx.date}</td>
-                                <td style={{ color: tx.income ? "#3EBD93" : "black" }}>
-                                    {tx.income ? `${tx.income.toLocaleString("fa-IR")}+` : ""}
-                                </td>
-                                <td style={{  color: tx.expense ? "#EF4E4E" : "black" }}>
-                                    {tx.expense ? `${tx.expense.toLocaleString("fa-IR")}-` : ""}
-                                </td>
-                                <td className="date" >{tx.description}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+      <div className="size">
+    <h2>تراکنش‌ها</h2>
+    <div className="div-table">
+        <div className="title">
+            <div>تاریخ</div>
+            <div>درآمد (تومان)</div>
+            <div>هزینه (تومان)</div>
+            <div>شرح</div>
+        </div>
+
+        <div className="table-body">
+            {Data.map((tx, index) => (
+                <div className="info" key={index}>
+                    <div className="transaction-date">{tx.date}</div>
+
+                    <div className="transaction-income">
+                        {tx.income ? `${tx.income.toLocaleString("fa-IR")}+` : ""}
+                    </div>
+
+                    <div className="transaction-expense">
+                        {tx.expense ? `${tx.expense.toLocaleString("fa-IR")}-` : ""}
+                    </div>
+
+                    <div className="transaction-description">{tx.description}</div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
         </>
     );
 };
