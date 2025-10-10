@@ -1,0 +1,92 @@
+.size {
+    padding: 24px;
+    max-width: 768px;
+    margin: auto;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.size h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.div-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 160px 160px 160px 160px;
+    font-weight: bold;
+    color: #6B7580;
+    border-bottom: 1px solid #A0CCF8;
+    padding: 10px 5px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 160px 160px 160px 160px;
+    align-items: center;
+    padding: 15px 5px;
+}
+
+.info > div {
+    text-align: right;
+}
+
+.transaction-income {
+    color: #3EBD93; 
+    font-weight: 500;
+    text-align: center;
+}
+.transaction-expense {
+    color: #EF4E4E; 
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .title {
+        display: none;
+    }
+
+    .info {
+        display: grid;
+        background-color: #FAFAFB;
+        border-radius: 8px;
+        border-bottom: none;
+        width: 300px ;        
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "date amount"
+            "desc desc";
+    }
+
+    .transaction-date {
+        grid-area: date;
+        color: #6B7580;
+        font-size: 0.9em;
+        text-align: left; 
+    }
+
+    .transaction-income,
+    .transaction-expense {
+        grid-area: amount;
+        text-align: right; 
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    .transaction-description {
+        grid-area: desc;
+        text-align: right;
+        margin-top: 8px;
+        color: #242D35;
+    }
+}
