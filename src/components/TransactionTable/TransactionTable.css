@@ -32,7 +32,7 @@
 
 .info {
     display: grid;
-    grid-template-columns: 160px 160px 160px 160px;
+    grid-template-columns: 160px 160px 160px 160px 20px;
     align-items: center;
     padding: 15px 5px;
 }

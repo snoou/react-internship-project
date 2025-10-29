@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable/TransactionTable';
 import GetInitialTransactions from './utils/GetInitialTransactions/GetInitialTransactions';
+import DeleteTransaction from './utils/DeleteTransaction/DeleteTransaction';
 
 function App() {
   const STORAGE_KEY = 'expenseTrackerData';
@@ -18,9 +19,7 @@ function App() {
   };
   return (
     <>
-      <TransactionTable data={transactions} onAddTransaction={addTransaction}>
-        {' '}
-      </TransactionTable>
+      <TransactionTable data={transactions} onAddTransaction={addTransaction}  onDeleteTransaction={DeleteTransaction} ></TransactionTable>
     </>
   );
 }

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './AddTransactionForm.css';
+import Id from '../../utils/Id/Id';
+import VectorIcon from '../../assets/icon/Vector.png'
 
 const AddTransactionForm = ({ onClose, onSubmit }) => {
   const [date, setDate] = useState('');
@@ -19,6 +21,7 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
     setError('');
 
     onSubmit({
+      id : Id(),
       date,
       amount,
       type,
@@ -36,7 +39,7 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
       <div className="modal">
         <div className='head'>
           <h3>افزودن تراکنش</h3>
-          <img src="src/assets/icon/Vector.png" alt="کنسل" onClick={onClose} ></img>
+          <img src={VectorIcon} alt="کنسل" onClick={onClose} ></img>
         </div>
         
         <form onSubmit={handleSubmit}>

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './TransactionTable.css';
 import AddTransactionForm from '../AddTransactionForm/AddTransactionForm';
+import DangerIcon from '../../assets/icon/DangerCircle.png'
 import PlusIcon from '../../assets/icon/Plus.png';
 import ToPersian from '../../utils/ToPersian/ToPersian';
-const TransactionTable = ({ data, onAddTransaction }) => {
+const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -11,7 +12,7 @@ const TransactionTable = ({ data, onAddTransaction }) => {
       <div className="header">
         <h2>تراکنش‌ها</h2>
         <button onClick={() => setIsModalOpen(true)}>
-          <img src="./src/assets/icon/Plus.png" alt="icon" />
+          <img src={PlusIcon} alt="icon" />
           افزودن تراکنش
         </button>
       </div>
@@ -26,12 +27,12 @@ const TransactionTable = ({ data, onAddTransaction }) => {
       <div className="table-body">
         {data.length === 0 ? (
           <div className="not">
-            <img src={PlusIcon} alt="icon" />
+            <img src={DangerIcon} alt="icon" />
             شما هنوز تراکنشی وارد نکرده‌اید
           </div>
         ) : (
-          data.map((tx, index) => (
-            <div className="info" key={index}>
+          data.map((tx) => (
+            <div className="info" key={tx.id} >
               <div className="transaction-date">{ToPersian(tx.date)}</div>
               <div className="transaction-income">
                 {tx.type === 'income' ? `${ToPersian(tx.amount)}+` : ''}
@@ -40,6 +41,8 @@ const TransactionTable = ({ data, onAddTransaction }) => {
                 {tx.type === 'expense' ? `${ToPersian(tx.amount)}-` : ''}
               </div>
               <div className="transaction-description">{tx.description}</div>
+              <div className="delete-btn"
+                onClick={() => onDeleteTransaction(tx.id)} ><img src="src/assets/icon/Delete.png" alt="delet"></img></div>
             </div>
           ))
         )}
