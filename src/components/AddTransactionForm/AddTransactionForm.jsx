@@ -21,7 +21,7 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
     setError('');
 
     onSubmit({
-      id : Id(),
+      id: Id(),
       date,
       amount,
       type,
@@ -41,13 +41,13 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
           <h3>افزودن تراکنش</h3>
           <img src={VectorIcon} alt="کنسل" onClick={onClose} ></img>
         </div>
-        
+
         <form onSubmit={handleSubmit}>
           {error && <p className="error">{error}</p>}
 
           <div className="row">
             <label>تاریخ:</label>
-            <input type="date" className="custom-date-input"  value={date || ""} onChange={(e) => setDate(e.target.value)} />
+            <input type="date" className="custom-date-input" value={date || ""} onChange={(e) => setDate(e.target.value)} />
           </div>
 
           <div className="row">

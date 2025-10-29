@@ -25,9 +25,10 @@
 
 }
 
-.head{
+.head {
   justify-content: space-between;
 }
+
 .head img {
   cursor: pointer;
 }
@@ -53,9 +54,9 @@ label {
   width: 160px;
 }
 
-.type-t{
- width: 277px;
- 
+.type-t {
+  width: 277px;
+
 }
 
 input[type="date"],
