@@ -155,3 +155,14 @@ button[type="button"]:hover {
   height: 100%;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+ .modal{
+  width: 348px;
+ }
+
+ .modal-overlay{
+  align-items: end;
+ } 
+
+}

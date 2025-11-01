@@ -46,7 +46,7 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
           {error && <p className="error">{error}</p>}
 
           <div className="row">
-            <label>تاریخ:</label>
+            <label>تاریخ</label>
             <input type="date" className="custom-date-input" value={date || ""} onChange={(e) => setDate(e.target.value)} />
           </div>
 
@@ -82,7 +82,7 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
           </div>
 
           <div className="row">
-            <label>شرح:</label>
+            <label>شرح</label>
             <input
               type="text"
               value={description}

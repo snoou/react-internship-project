@@ -1,6 +1,5 @@
 .size {
     font-family: "Vazirmatn", sans-serif;
-
     padding: 24px;
     max-width: 768px;
     margin: auto;
@@ -86,6 +85,11 @@
 }
 
 @media (max-width: 768px) {
+    .size{
+        width: 360px;
+    }
+
+
     .title {
         display: none;
     }
@@ -99,8 +103,7 @@
         background-color: #FAFAFB;
         border-radius: 8px;
         border-bottom: none;
-        width: 300px;
-
+        width: 322px;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
 
