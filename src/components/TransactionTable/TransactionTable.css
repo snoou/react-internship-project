@@ -100,11 +100,14 @@
         border-radius: 8px;
         border-bottom: none;
         width: 300px;
-        grid-template-columns: 1fr auto;
+
+        grid-template-columns: 1fr;
         grid-template-rows: auto auto;
+
         grid-template-areas:
             "date amount"
-            "desc desc";
+            "desc status";
+
     }
 
     .transaction-date {

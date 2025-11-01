@@ -17,15 +17,18 @@ const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
         </button>
       </div>
 
-      <div className="title">
-        <div className="transaction-date-title">تاریخ</div>
-        <div className="transaction-income-title">درآمد (تومان)</div>
-        <div className="transaction-expense-title">هزینه (تومان)</div>
-        <div className="transaction-description-title">شرح</div>
-      </div>
+      {data.length > 0 && (
+        <div className="title">
+          <div className="transaction-date-title">تاریخ</div>
+          <div className="transaction-income-title">درآمد (تومان)</div>
+          <div className="transaction-expense-title">هزینه (تومان)</div>
+          <div className="transaction-description-title">شرح</div>
+        </div>
+      )}
 
       <div className="table-body">
         {data.length === 0 ? (
+
           <div className="not">
             <img src={DangerIcon} alt="icon" />
             شما هنوز تراکنشی وارد نکرده‌اید
@@ -41,7 +44,7 @@ const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
                 {tx.type === 'expense' ? `${ToPersian(tx.amount)}-` : ''}
               </div>
               <div className="transaction-description">{tx.description}</div>
-              <div className="delete-btn"
+              <div className="delete-btn left"
                 onClick={() => onDeleteTransaction(tx.id)} ><img src="src/assets/icon/Delete.png" alt="delet"></img></div>
             </div>
           ))
