@@ -85,19 +85,15 @@
 }
 
 @media (max-width: 768px) {
-    .size{
+    .size {
         width: 360px;
     }
-
-
     .title {
         display: none;
     }
-
     .not {
         width: 310px;
     }
-
     .info {
         display: grid;
         background-color: #FAFAFB;
@@ -112,7 +108,6 @@
             "desc status";
 
     }
-
     .transaction-date {
         grid-area: date;
         color: #6B7580;
@@ -127,7 +122,6 @@
         font-weight: bold;
         font-size: 1.1em;
     }
-
     .transaction-description {
         grid-area: desc;
         text-align: right;
