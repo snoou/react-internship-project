@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable/TransactionTable';
-import GetInitialTransactions from './utils/GetInitialTransactions/GetInitialTransactions';
+import GetInitialTransactions from './utils/GetInitialTransactions';
 
 function App() {
   const deleteTransaction = (id) => {

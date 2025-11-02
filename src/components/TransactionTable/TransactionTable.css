@@ -85,32 +85,43 @@
 }
 
 @media (max-width: 768px) {
+    .header {
+        width: 332px;
+    }
+
     .size {
         width: 360px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
+
     .title {
         display: none;
     }
+
     .not {
         width: 310px;
     }
     .info {
         display: grid;
         background-color: #FAFAFB;
+        margin: 10px 0 ;
+        padding: 14px 16px;
         border-radius: 8px;
         border-bottom: none;
         width: 322px;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-
         grid-template-areas:
             "date amount"
             "desc status";
-
     }
+
     .transaction-date {
         grid-area: date;
-        color: #6B7580;
+        color: #242D35;
         font-size: 0.9em;
         text-align: left;
     }
@@ -122,6 +133,7 @@
         font-weight: bold;
         font-size: 1.1em;
     }
+
     .transaction-description {
         grid-area: desc;
         text-align: right;

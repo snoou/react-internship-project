@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './AddTransactionForm.css';
-import Id from '../../utils/Id/Id';
+import Id from '../../utils/Id';
 import VectorIcon from '../../assets/icon/Vector.png'
 
 const AddTransactionForm = ({ onClose, onSubmit }) => {
@@ -9,17 +9,13 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
   const [type, setType] = useState('income');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!date || !amount || !description) {
       setError('لطفاً تمام فیلدها را پر کنید');
       return;
     }
-
     setError('');
-
     onSubmit({
       id: Id(),
       date,
@@ -27,13 +23,11 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
       type,
       description,
     });
-
     setDate('');
     setAmount('');
     setType('income');
     setDescription('');
   };
-
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -41,20 +35,16 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
           <h3>افزودن تراکنش</h3>
           <img src={VectorIcon} alt="کنسل" onClick={onClose} ></img>
         </div>
-
         <form onSubmit={handleSubmit}>
           {error && <p className="error">{error}</p>}
-
           <div className="row">
             <label>تاریخ</label>
             <input type="date" className="custom-date-input" value={date || ""} onChange={(e) => setDate(e.target.value)} />
           </div>
-
           <div className="row">
             <label>مبلغ (تومان)</label>
             <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
           </div>
-
           <div>
             <label>نوع تراکنش</label>
             <div className="type-t">
@@ -80,7 +70,6 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
               </label>
             </div>
           </div>
-
           <div className="row">
             <label>شرح</label>
             <input
@@ -89,7 +78,6 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-
           <div className="buttons">
             <button type="button" onClick={onClose}>
               انصراف

@@ -3,10 +3,10 @@ import './TransactionTable.css';
 import AddTransactionForm from '../AddTransactionForm/AddTransactionForm';
 import DangerIcon from '../../assets/icon/DangerCircle.png'
 import PlusIcon from '../../assets/icon/Plus.png';
-import ToPersian from '../../utils/ToPersian/ToPersian';
+import Delete from '../../assets/icon/Delete.png'
+import ToPersian from '../../utils/ToPersian';
 const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <div className="size">
       <div className="header">
@@ -16,7 +16,6 @@ const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
           افزودن تراکنش
         </button>
       </div>
-
       {data.length > 0 && (
         <div className="title">
           <div className="transaction-date-title">تاریخ</div>
@@ -25,7 +24,6 @@ const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
           <div className="transaction-description-title">شرح</div>
         </div>
       )}
-
       <div className="table-body">
         {data.length === 0 ? (
 
@@ -45,12 +43,11 @@ const TransactionTable = ({ data, onAddTransaction, onDeleteTransaction }) => {
               </div>
               <div className="transaction-description">{tx.description}</div>
               <div className="delete-btn left"
-                onClick={() => onDeleteTransaction(tx.id)} ><img src="src/assets/icon/Delete.png" alt="delet"></img></div>
+                onClick={() => onDeleteTransaction(tx.id)} ><img src={Delete} alt="delet"></img></div>
             </div>
           ))
         )}
       </div>
-
       {isModalOpen && (
         <AddTransactionForm
           onClose={() => setIsModalOpen(false)}
