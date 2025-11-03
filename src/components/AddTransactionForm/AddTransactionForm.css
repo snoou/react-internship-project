@@ -161,6 +161,10 @@ button[type="button"]:hover {
   width: 348px;
  }
 
+ .type-t{
+  width: 230px;
+ }
+
  .modal-overlay{
   align-items: end;
  } 
