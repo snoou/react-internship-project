@@ -157,16 +157,16 @@ button[type="button"]:hover {
 }
 
 @media (max-width: 768px) {
- .modal{
-  width: 348px;
- }
+  .modal {
+    width: 348px;
+  }
 
- .type-t{
-  width: 230px;
- }
+  .type-t {
+    width: 230px;
+  }
 
- .modal-overlay{
-  align-items: end;
- } 
+  .modal-overlay {
+    align-items: end;
+  }
 
 }
