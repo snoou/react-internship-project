@@ -6,7 +6,6 @@ import { TransactionContext } from "../../context/TransactionContext";
 
 const AddTransactionForm = ({ onClose }) => {
   const { dispatch } = useContext(TransactionContext);
-
   const [date, setDate] = useState('');
   const [amount, setAmount] = useState('');
   const [type, setType] = useState('income');
@@ -29,12 +28,10 @@ const AddTransactionForm = ({ onClose }) => {
         description,
       },
     });
-
     setDate('');
     setAmount('');
     setType('income');
     setDescription('');
-
     if (onClose) onClose();
   };
 
@@ -45,7 +42,6 @@ const AddTransactionForm = ({ onClose }) => {
           <h3>افزودن تراکنش</h3>
           <img src={VectorIcon} alt="کنسل" onClick={onClose} />
         </div>
-
         <form onSubmit={handleSubmit}>
           {error && <p className="error">{error}</p>}
 
@@ -67,7 +63,6 @@ const AddTransactionForm = ({ onClose }) => {
               onChange={(e) => setAmount(e.target.value)}
             />
           </div>
-
           <div>
             <label>نوع تراکنش</label>
             <div className="type-t">
@@ -93,7 +88,6 @@ const AddTransactionForm = ({ onClose }) => {
               </label>
             </div>
           </div>
-
           <div className="row">
             <label>شرح</label>
             <input
@@ -102,7 +96,6 @@ const AddTransactionForm = ({ onClose }) => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-
           <div className="buttons">
             <button type="button" onClick={onClose}>
               انصراف
