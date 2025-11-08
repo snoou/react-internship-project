@@ -11,7 +11,6 @@ const Layout = () => {
                     <img src={Logo} alt="logo" />
                     <img src={TextLogo} alt="text logo" />
                 </div>
-
                 <div className="title-page-layout">
                     <NavLink
                         to="/dashboard"
@@ -32,7 +31,6 @@ const Layout = () => {
                     </NavLink>
                 </div>
             </header>
-
             <main>
                 <Outlet />
             </main>

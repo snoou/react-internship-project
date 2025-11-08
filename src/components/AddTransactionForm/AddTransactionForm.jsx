@@ -44,7 +44,6 @@ const AddTransactionForm = ({ onClose }) => {
         </div>
         <form onSubmit={handleSubmit}>
           {error && <p className="error">{error}</p>}
-
           <div className="row">
             <label>تاریخ</label>
             <input
@@ -54,7 +53,6 @@ const AddTransactionForm = ({ onClose }) => {
               onChange={(e) => setDate(e.target.value)}
             />
           </div>
-
           <div className="row">
             <label>مبلغ (تومان)</label>
             <input

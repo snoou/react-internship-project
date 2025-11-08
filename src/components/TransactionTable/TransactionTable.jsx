@@ -14,7 +14,6 @@ const TransactionTable = () => {
   const handleDelete = (id) => {
     dispatch({ type: 'DELETE_TRANSACTION', payload: id });
   };
-
   return (
     <div className="size">
       <div className="header">
@@ -24,7 +23,6 @@ const TransactionTable = () => {
           افزودن تراکنش
         </button>
       </div>
-
       {transactions.length > 0 && (
         <div className="title">
           <div className="transaction-date-title">تاریخ</div>
@@ -33,7 +31,6 @@ const TransactionTable = () => {
           <div className="transaction-description-title">شرح</div>
         </div>
       )}
-
       <div className="table-body">
         {transactions.length === 0 ? (
           <div className="not">
@@ -48,13 +45,10 @@ const TransactionTable = () => {
               <div className="transaction-income">
                 {tx.type === 'income' ? `${ToPersian(tx.amount)}+` : ''}
               </div>
-
               <div className="transaction-expense">
                 {tx.type === 'expense' ? `${ToPersian(tx.amount)}-` : ''}
               </div>
-
               <div className="transaction-description">{tx.description}</div>
-
               <div
                 className="delete-btn left"
                 onClick={() => handleDelete(tx.id)}
@@ -65,7 +59,6 @@ const TransactionTable = () => {
           ))
         )}
       </div>
-
       {isModalOpen && (
         <AddTransactionForm
           onClose={() => setIsModalOpen(false)}
@@ -74,5 +67,4 @@ const TransactionTable = () => {
     </div>
   );
 };
-
 export default TransactionTable;

@@ -1,8 +1,6 @@
 import { createContext, useReducer, useEffect } from "react";
 import GetInitialTransactions from "../utils/GetInitialTransactions";
-
 export const TransactionContext = createContext();
-
 const transactionReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TRANSACTION":
@@ -13,19 +11,15 @@ const transactionReducer = (state, action) => {
             return state;
     }
 };
-
 export const TransactionProvider = ({ children }) => {
     const STORAGE_KEY = "expenseTrackerData";
-
     const [transactions, dispatch] = useReducer(
         transactionReducer,
         GetInitialTransactions()
     );
-
     useEffect(() => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
     }, [transactions]);
-
     return (
         <TransactionContext.Provider value={{ transactions, dispatch }}>
             {children}
