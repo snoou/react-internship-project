@@ -1,5 +1,3 @@
-
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -19,8 +17,20 @@
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   width: 420px;
-  padding: 24px 32px;
+  padding: 16px 32px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
   font-family: "Vazirmatn", sans-serif;
+
+}
+
+.head {
+  justify-content: space-between;
+}
+
+.head img {
+  cursor: pointer;
 }
 
 .modal h3 {
@@ -44,8 +54,9 @@ label {
   width: 160px;
 }
 
-.type-t{
- margin-right: 100px;
+.type-t {
+  width: 277px;
+
 }
 
 input[type="date"],
@@ -109,4 +120,53 @@ button[type="button"] {
 
 button[type="button"]:hover {
   background-color: #e8e8e8;
+}
+
+
+.error {
+  color: red;
+  background-color: #ffe5e5;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+
+.custom-date-input {
+  text-align: right;
+  position: relative;
+  background: url("../../assets/icon/Calendar.png") no-repeat left 10px center;
+  background-size: 20px;
+  padding-left: 40px;
+  padding-right: 10px;
+  font-size: 14px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+ .modal{
+  width: 348px;
+ }
+
+ .type-t{
+  width: 230px;
+ }
+
+ .modal-overlay{
+  align-items: end;
+ } 
+
 }

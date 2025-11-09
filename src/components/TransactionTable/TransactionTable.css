@@ -1,6 +1,5 @@
 .size {
     font-family: "Vazirmatn", sans-serif;
-
     padding: 24px;
     max-width: 768px;
     margin: auto;
@@ -32,7 +31,7 @@
 
 .info {
     display: grid;
-    grid-template-columns: 160px 160px 160px 160px;
+    grid-template-columns: 160px 160px 160px 160px 20px;
     align-items: center;
     padding: 15px 5px;
 }
@@ -86,6 +85,18 @@
 }
 
 @media (max-width: 768px) {
+    .header {
+        width: 332px;
+    }
+
+    .size {
+        width: 360px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
     .title {
         display: none;
     }
@@ -93,23 +104,24 @@
     .not {
         width: 310px;
     }
-
     .info {
         display: grid;
         background-color: #FAFAFB;
+        margin: 10px 0 ;
+        padding: 14px 16px;
         border-radius: 8px;
         border-bottom: none;
-        width: 300px;
-        grid-template-columns: 1fr auto;
+        width: 322px;
+        grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
             "date amount"
-            "desc desc";
+            "desc status";
     }
 
     .transaction-date {
         grid-area: date;
-        color: #6B7580;
+        color: #242D35;
         font-size: 0.9em;
         text-align: left;
     }
