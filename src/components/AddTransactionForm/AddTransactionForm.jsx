@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from "react";
 import './AddTransactionForm.css';
 import Id from '../../utils/Id';
-import VectorIcon from '../../assets/icon/Vector.png'
+import VectorIcon from '../../assets/icon/Vector.png';
+import { TransactionContext } from "../../context/TransactionContext";
 
-const AddTransactionForm = ({ onClose, onSubmit }) => {
+const AddTransactionForm = ({ onClose }) => {
+  const { dispatch } = useContext(TransactionContext);
   const [date, setDate] = useState('');
   const [amount, setAmount] = useState('');
   const [type, setType] = useState('income');
@@ -16,34 +18,48 @@ const AddTransactionForm = ({ onClose, onSubmit }) => {
       return;
     }
     setError('');
-    onSubmit({
-      id: Id(),
-      date,
-      amount,
-      type,
-      description,
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: {
+        id: Id(),
+        date,
+        amount: parseFloat(amount),
+        type,
+        description,
+      },
     });
     setDate('');
     setAmount('');
     setType('income');
     setDescription('');
+    if (onClose) onClose();
   };
+
   return (
     <div className="modal-overlay">
       <div className="modal">
         <div className='head'>
           <h3>افزودن تراکنش</h3>
-          <img src={VectorIcon} alt="کنسل" onClick={onClose} ></img>
+          <img src={VectorIcon} alt="کنسل" onClick={onClose} />
         </div>
         <form onSubmit={handleSubmit}>
           {error && <p className="error">{error}</p>}
           <div className="row">
             <label>تاریخ</label>
-            <input type="date" className="custom-date-input" value={date || ""} onChange={(e) => setDate(e.target.value)} />
+            <input
+              type="date"
+              className="custom-date-input"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
           </div>
           <div className="row">
             <label>مبلغ (تومان)</label>
-            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
           </div>
           <div>
             <label>نوع تراکنش</label>
