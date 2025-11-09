@@ -72,10 +72,9 @@
     gap: 10px;
 }
 
-
 .not {
     height: 875px;
-    width: 650px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,10 +103,11 @@
     .not {
         width: 310px;
     }
+
     .info {
         display: grid;
         background-color: #FAFAFB;
-        margin: 10px 0 ;
+        margin: 10px 0;
         padding: 14px 16px;
         border-radius: 8px;
         border-bottom: none;

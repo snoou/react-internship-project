@@ -1,8 +1,10 @@
 @import './fonts.css';
+
 :root {
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: "Vazirmatn", sans-serif;
     font-weight: 500;

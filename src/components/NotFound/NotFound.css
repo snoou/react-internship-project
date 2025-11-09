@@ -1,0 +1,23 @@
+.center-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100vw;
+}
+
+.page-not-found {
+    padding: 36px 24px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 16px;
+    gap: 24px;
+}
+
+.title-not-found {
+    font-weight: 600;
+    font-size: 20px;
+}
