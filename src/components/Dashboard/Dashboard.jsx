@@ -6,11 +6,11 @@ const Dashboard = () => {
   return (
     <>
       <div className="size">
-        <div className="header">
+        <div className=" dashbord">
           <h2>داشبورد</h2>
-          <Diagram income={income} expense={expense}></Diagram>
-
-
+          <div className='header '>
+            <Diagram income={income} expense={expense}></Diagram>
+          </div>
         </div>
       </div>
     </>

@@ -16,12 +16,12 @@
 }
 
 .chart-wrapper canvas {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: auto;
 }
 
 .pie-chart canvas {
-    height: 320px !important;
+    height: 320px
 }
 
 @media (max-width: 600px) {
