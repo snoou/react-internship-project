@@ -8,7 +8,6 @@
 
 .chart-wrapper {
     width: 100%;
-    background: #fff;
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
@@ -41,6 +40,8 @@
 }
 
 .pie-box {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
@@ -49,7 +50,27 @@
 
 .pie-box canvas {
     width: 100%;
-
-
     display: block;
+}
+
+.input {
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.input:hover {
+    background-color: #eee;
+    border-color: #999;
+}
+
+.input:focus {
+    border-color: #4a90e2;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.5);
 }

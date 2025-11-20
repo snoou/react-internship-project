@@ -123,7 +123,7 @@ const Diagram = ({ income = [], expense = [] }) => {
     <div style={{ width: 700, margin: "20px auto" }}>
       <div style={{ marginBottom: 10 }}>
         <label>سال:</label>
-        <select value={year} onChange={(e) => setYear(e.target.value)}>
+        <select className="input" value={year} onChange={(e) => setYear(e.target.value)}>
           <option value="">تمام سال‌ها</option>
           {years.map((y) => (
             <option key={y} value={y}>{y}</option>
